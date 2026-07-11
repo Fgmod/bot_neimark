@@ -10,11 +10,11 @@ import requests
 
 # --- НАСТРОЙКИ (ЭТИ ПЕРЕМЕННЫЕ НУЖНО БУДЕТ ЗАДАТЬ В RENDER) ---
 # Получить токен у @BotFather
-BOT_TOKEN = os.environ.get("8345325076:AAFreetpBya03pUSwABL6VgrCFQ644mJt-s")
+BOT_TOKEN = "8345325076:AAFreetpBya03pUSwABL6VgrCFQ644mJt-s"
 # Ваш Telegram ID (узнать у @userinfobot)
-ADMIN_ID = int(os.environ.get("1743237033", "0"))
+ADMIN_ID = 1743237033
 # Строка подключения к MongoDB Atlas
-MONGODB_URI = os.environ.get("mongodb+srv://makarychev887_db_user:VjHYgC26wBnnmMUW@cluster0.omk9t2w.mongodb.net/?appName=Cluster0")
+MONGODB_URI = "mongodb+srv://makarychev887_db_user:VjHYgC26wBnnmMUW@cluster0.omk9t2w.mongodb.net/?appName=Cluster0"
 DB_NAME = "neimark_secure" # Имя базы данных
 
 # --- НАСТРОЙКА ЛОГИРОВАНИЯ ---
