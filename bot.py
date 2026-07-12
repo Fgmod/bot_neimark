@@ -3,6 +3,27 @@ import os
 import json
 from pymongo import MongoClient
 
+# Добавьте в начало файла (после import-ов)
+from flask import Flask
+import threading
+
+# Создаём Flask-приложение для health check
+health_app = Flask(__name__)
+
+@health_app.route('/')
+def health():
+    return "Бот работает", 200
+
+def run_health_server():
+    # Render передаёт порт через переменную PORT
+    port = int(os.environ.get("PORT", 10000))
+    health_app.run(host="0.0.0.0", port=port)
+
+# Запускаем HTTP-сервер в отдельном потоке
+threading.Thread(target=run_health_server, daemon=True).start()
+
+# --- остальной код бота (обработчики команд, main() и т.д.) ---
+
 BOT_TOKEN = "8345325076:AAFreetpBya03pUSwABL6VgrCFQ644mJt-s"
 ADMIN_ID = 1743237033
 MONGODB_URI = "mongodb+srv://makarychev887_db_user:VjHYgC26wBnnmMUW@cluster0.omk9t2w.mongodb.net/?appName=Cluster0"
