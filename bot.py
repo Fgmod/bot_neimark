@@ -2,8 +2,6 @@ import telebot
 import os
 import json
 from pymongo import MongoClient
-
-# Добавьте в начало файла (после import-ов)
 from flask import Flask
 import threading
 
@@ -21,8 +19,6 @@ def run_health_server():
 
 # Запускаем HTTP-сервер в отдельном потоке
 threading.Thread(target=run_health_server, daemon=True).start()
-
-# --- остальной код бота (обработчики команд, main() и т.д.) ---
 
 BOT_TOKEN = "8345325076:AAFreetpBya03pUSwABL6VgrCFQ644mJt-s"
 ADMIN_ID = 1743237033
